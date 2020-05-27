@@ -1,0 +1,11 @@
+name: integration
+on: push
+jobs:
+  test:
+    env:
+      REVISION: 7.7.0
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build the stack
+        run: ./.ci/start-stack.sh
